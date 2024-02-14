@@ -1,10 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
 using UnityEngine.UI;
 
-public class FridgeManager : MonoBehaviour
+public class ResourceManager : MonoBehaviour
 {
     [SerializeField] private int hunger;
     [SerializeField] private int thirst;
@@ -13,8 +12,6 @@ public class FridgeManager : MonoBehaviour
     [SerializeField] private Slider hungerSlider;
     [SerializeField] private Slider thirstSlider;
     [SerializeField] private Slider healthSlider;
-
-    [SerializeField] private List<GameObject> foods;
 
     private void Start()
     {
@@ -37,5 +34,10 @@ public class FridgeManager : MonoBehaviour
         hungerSlider.value = hunger;
         thirstSlider.value = thirst;
         healthSlider.value = health;
+    }
+
+    public void ApplyStatusEffect()
+    {
+
     }
 }
