@@ -2,10 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu]
-public class FoodSO : ScriptableObject
+[System.Serializable]
+public class FoodStats
 {
-
     public enum FoodType
     {
         Dairy,
@@ -17,12 +16,9 @@ public class FoodSO : ScriptableObject
         Sugars
     }
 
-    public GameObject prefab;
-
     public FoodType foodType;
 
-    public float hungerDelta;
-    public float thirstDelta;
-    public float healthDelta;
-
+    public int hungerDelta;
+    public int thirstDelta;
+    public int healthDelta;
 }
