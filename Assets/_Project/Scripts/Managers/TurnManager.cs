@@ -1,25 +1,55 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class TurnManager : MonoBehaviour
 {
+    [SerializeField] private FridgeManager fridgeManager;
+    [SerializeField] private DoorController doorController;
+    [SerializeField] private int foodCount;
+    [SerializeField] private float turnDuration = 5f;
 
     private int turnCount;
-
     private bool turnStarted;
+    private float turnTimer;
 
-    // Start is called before the first frame update
     void Start()
     {
-        
+        turnCount = 0;
+        turnStarted = false;
+        fridgeManager.PopulateFridge(foodCount);
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        if (turnStarted)
+        {
+            turnTimer += Time.deltaTime;
+
+            if (turnTimer >= turnDuration)
+            {
+                CloseFridge();
+            }
+        }
     }
 
-    
+    public void OpenFridge()
+    {
+        turnCount += 1;
+        turnStarted = true;
+        turnTimer = 0f; // Reset the timer when the turn starts
+    }
+
+    private void CloseFridge()
+    {
+        turnStarted = false;
+        turnTimer = 0f; // Reset the timer when the turn ends
+        doorController.CloseDoor();
+        StartCoroutine(DelayPopulateFridge());
+    }
+
+    private IEnumerator DelayPopulateFridge()
+    {
+        yield return new WaitForSeconds(doorController.animationDuration);
+        fridgeManager.PopulateFridge(foodCount);
+    }
 }

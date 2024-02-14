@@ -10,10 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4ab89d193c63bed478f0a14bb34c6b3f, type: 3}
-  m_Name: SO_Milk
+  m_Name: SO_FoodBankData
   m_EditorClassIdentifier: 
-  sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  foodType: 0
-  hungerDelta: 1
-  thirstDelta: 3
-  healthDelta: 1
+  folderPath: Assets/_Project/Prefabs/Food
+  foodPrefabs:
+  - {fileID: 1818136463654565673, guid: 9afd57b28b0bb61459bb7c5aa7d90c36, type: 3}
+  - {fileID: 3302141386787084422, guid: 696953557c05a2f4c9f16ddf007e3774, type: 3}

@@ -4,7 +4,7 @@ public class DoorController : MonoBehaviour
 {
     [SerializeField] private Transform doorTransform;
     [SerializeField] private float openAngle = 90f;
-    [SerializeField] private float animationDuration = 2f;
+    public float animationDuration = 2f;
 
     private Quaternion closedRotation;
     private Quaternion openRotation;

@@ -3,9 +3,9 @@ using UnityEngine;
 public class Food : MonoBehaviour
 {
     [SerializeField] private FoodStats stats;
-    [SerializeField] private Transform targetTransform;
+    public Transform targetTransform;
     [SerializeField] private float lerpSpeed = 1f;
-    [SerializeField] private float destroyDistance = 0.1f;
+    [SerializeField] private float destroyDistance = 0.5f;
 
     private ResourceManager resourceManager;
     private bool isMovingToTarget = false;
