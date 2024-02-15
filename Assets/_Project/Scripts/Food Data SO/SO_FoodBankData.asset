@@ -16,3 +16,4 @@ MonoBehaviour:
   foodPrefabs:
   - {fileID: 1818136463654565673, guid: 9afd57b28b0bb61459bb7c5aa7d90c36, type: 3}
   - {fileID: 3302141386787084422, guid: 696953557c05a2f4c9f16ddf007e3774, type: 3}
+  - {fileID: 8423032455343296536, guid: f645a77449451c64aa631a47b0f8707c, type: 3}

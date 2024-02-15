@@ -3,34 +3,29 @@ using UnityEngine;
 public class Food : MonoBehaviour
 {
     [SerializeField] private FoodStats stats;
-    public Transform targetTransform;
-    [SerializeField] private float lerpSpeed = 1f;
-    [SerializeField] private float destroyDistance = 0.5f;
-
-    private ResourceManager resourceManager;
-    private bool isMovingToTarget = false;
+    
     private Collider objectCollider;
     private Rigidbody objectRigidbody;
+
+    [HideInInspector] public FoodGrabber grabber;
+    [HideInInspector] public ResourceManager resourceManager;
 
     private void Start()
     {
         if (resourceManager == null) resourceManager = FindObjectOfType<ResourceManager>();
+        if (grabber == null) grabber = FindObjectOfType<FoodGrabber>();
 
         objectCollider = GetComponent<Collider>();
         objectRigidbody = GetComponent<Rigidbody>();
     }
 
-    private void Update()
-    {
-        if (isMovingToTarget)
-        {
-            MoveToTarget();
-        }
-    }
-
     private void OnMouseDown()
     {
-        isMovingToTarget = true;
+        grabber.GrabFood(this);
+    }
+
+    public void OnGrabbed()
+    {
         if (objectCollider != null)
         {
             objectCollider.enabled = false;
@@ -41,19 +36,7 @@ public class Food : MonoBehaviour
         }
     }
 
-    private void MoveToTarget()
-    {
-        if (targetTransform != null)
-        {
-            transform.position = Vector3.Lerp(transform.position, targetTransform.position, lerpSpeed * Time.deltaTime);
-            if (Vector3.Distance(transform.position, targetTransform.position) < destroyDistance)
-            {
-                EatFood();
-            }
-        }
-    }
-
-    private void EatFood()
+    public void EatFood()
     {
         if (gameObject.CompareTag("Food"))
         {

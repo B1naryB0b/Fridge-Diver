@@ -1362,6 +1362,7 @@ GameObject:
   - component: {fileID: 560255171}
   - component: {fileID: 560255174}
   - component: {fileID: 560255173}
+  - component: {fileID: 560255176}
   - component: {fileID: 560255175}
   m_Layer: 0
   m_Name: Handle
@@ -1484,6 +1485,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   outlineMaterial: {fileID: 2100000, guid: 20f9f9e5add73c94d877016efd1951a1, type: 2}
+--- !u!114 &560255176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 560255168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 471c1653f912f834db81b3f6cc2b9cf8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turnManager: {fileID: 1191986795}
 --- !u!1 &700061882
 GameObject:
   m_ObjectHideFlags: 0
@@ -2146,6 +2160,7 @@ GameObject:
   - component: {fileID: 1191986795}
   - component: {fileID: 1191986794}
   - component: {fileID: 1191986796}
+  - component: {fileID: 1191986797}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -2199,7 +2214,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fridgeManager: {fileID: 1191986796}
+  doorController: {fileID: 560255173}
   foodCount: 20
+  turnDuration: 5
 --- !u!114 &1191986796
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2218,7 +2235,23 @@ MonoBehaviour:
   minimumFoodCount: 0
   maximumFoodCount: 20
   boundingBoxParent: {fileID: 1341798896}
-  mouthReference: {fileID: 1519341429}
+  grabberReference: {fileID: 0}
+  resourceManagerReference: {fileID: 0}
+--- !u!114 &1191986797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1191986791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03942df95bffe7a48ae113522864859a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetTransform: {fileID: 1519341429}
+  lerpSpeed: 7
+  destroyDistance: 0.5
 --- !u!1 &1194759022
 GameObject:
   m_ObjectHideFlags: 0

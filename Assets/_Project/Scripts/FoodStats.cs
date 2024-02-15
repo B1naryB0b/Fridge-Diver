@@ -21,4 +21,16 @@ public class FoodStats
     public int hungerDelta;
     public int thirstDelta;
     public int healthDelta;
+
+    public enum StatusEffect
+    {
+        None,
+        Spicy,
+        Energising,
+        Soothing,
+        Intoxicating
+    }
+
+    public StatusEffect statusEffect;
+
 }

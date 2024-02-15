@@ -152,9 +152,8 @@ MonoBehaviour:
     hungerDelta: -3
     thirstDelta: 1
     healthDelta: -3
-  targetTransform: {fileID: 0}
-  lerpSpeed: 7
-  destroyDistance: 0.5
+  grabber: {fileID: 0}
+  resourceManager: {fileID: 0}
 --- !u!114 &5334264951598850596
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -10,7 +10,8 @@ public class FridgeManager : MonoBehaviour
 
     [SerializeField] private GameObject boundingBoxParent;
 
-    [SerializeField] private Transform mouthReference;
+    [SerializeField] private FoodGrabber grabberReference;
+    [SerializeField] private ResourceManager resourceManagerReference;
 
     private List<GameObject> foodsInFridge = new List<GameObject>();
     private List<BoundingBox> fridgeBoundingBoxes = new List<BoundingBox>();
@@ -109,6 +110,7 @@ public class FridgeManager : MonoBehaviour
         collider.material = zeroFrictionMaterial;
 
         Food food = foodItem.GetComponent<Food>();
-        food.targetTransform = mouthReference;
+        food.grabber = grabberReference;
+        food.resourceManager = resourceManagerReference;
     }
 }
