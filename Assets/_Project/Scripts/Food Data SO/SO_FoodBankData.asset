@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   folderPath: Assets/_Project/Prefabs/Food
   foodPrefabs:
-  - {fileID: 1818136463654565673, guid: 9afd57b28b0bb61459bb7c5aa7d90c36, type: 3}
-  - {fileID: 3302141386787084422, guid: 696953557c05a2f4c9f16ddf007e3774, type: 3}
+  - {fileID: 1665875355737111567, guid: 8219fcbb75893b14797a78b95da34b96, type: 3}
+  - {fileID: 98604482681008579, guid: baec54d4512feee4f987f158d88b1991, type: 3}
+  - {fileID: 5429817001861404282, guid: c3e45561fd4f7e740a08e02c1c803d90, type: 3}
   - {fileID: 8423032455343296536, guid: f645a77449451c64aa631a47b0f8707c, type: 3}

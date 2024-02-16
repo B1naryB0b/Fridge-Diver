@@ -38,10 +38,9 @@ public class Food : MonoBehaviour
 
     public void EatFood()
     {
-        if (gameObject.CompareTag("Food"))
-        {
-            resourceManager.ApplyChanges(stats);
-            Destroy(gameObject);
-        }
+
+        resourceManager.ApplyChanges(stats);
+        Destroy(gameObject);
+        
     }
 }

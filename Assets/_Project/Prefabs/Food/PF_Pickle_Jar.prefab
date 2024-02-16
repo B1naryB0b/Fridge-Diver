@@ -31,17 +31,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 1560d89f60fce6642a87968a0a248dc0,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.0000012218953
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1560d89f60fce6642a87968a0a248dc0,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -10.25
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1560d89f60fce6642a87968a0a248dc0,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7071067
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1560d89f60fce6642a87968a0a248dc0,
         type: 3}
@@ -56,12 +56,12 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 1560d89f60fce6642a87968a0a248dc0,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1560d89f60fce6642a87968a0a248dc0,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: -90
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1560d89f60fce6642a87968a0a248dc0,
         type: 3}
@@ -104,7 +104,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 1560d89f60fce6642a87968a0a248dc0,
         type: 3}
       propertyPath: m_Name
-      value: Pickle Jar
+      value: PF_Pickle_Jar
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 1560d89f60fce6642a87968a0a248dc0,
         type: 3}
@@ -204,6 +204,7 @@ MonoBehaviour:
     hungerDelta: 2
     thirstDelta: -2
     healthDelta: 1
+    statusEffect: 0
   grabber: {fileID: 0}
   resourceManager: {fileID: 0}
 --- !u!114 &7556270904135834327
