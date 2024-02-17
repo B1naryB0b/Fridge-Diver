@@ -7,10 +7,19 @@ public class CameraController : MonoBehaviour
     [SerializeField] private float minY = -10.0f; // Minimum Y position
     [SerializeField] private float maxY = 10.0f; // Maximum Y position
     [SerializeField] private AnimationCurve speedCurve;
+    [SerializeField] private float zoomSpeed = 1.0f;
+    private float targetZoom;
+
+    private void Start()
+    {
+        targetZoom = transform.position.z;
+    }
 
     private void Update()
     {
         MoveCameraBasedOnMousePosition();
+        PerformZoom();
+
     }
 
     private void MoveCameraBasedOnMousePosition()
@@ -33,5 +42,16 @@ public class CameraController : MonoBehaviour
         Vector3 newPosition = transform.position + Vector3.up * moveDirection * verticalSpeed * Time.deltaTime;
         newPosition.y = Mathf.Clamp(newPosition.y, minY, maxY);
         transform.position = newPosition;
+    }
+
+    private void PerformZoom()
+    {
+        float newZ = Mathf.Lerp(transform.position.z, targetZoom, Time.deltaTime * zoomSpeed);
+        transform.position = new Vector3(transform.position.x, transform.position.y, newZ);
+    }
+
+    public void ZoomLevel(float distance)
+    {
+        targetZoom = distance;
     }
 }

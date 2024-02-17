@@ -1106,7 +1106,7 @@ Transform:
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
   m_LocalRotation: {x: 0.13052596, y: -0, z: -0, w: 0.99144495}
-  m_LocalPosition: {x: 0, y: 6, z: -10.11}
+  m_LocalPosition: {x: 0, y: 6, z: -15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1197,6 +1197,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  zoomSpeed: 2
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -2239,6 +2240,9 @@ MonoBehaviour:
   hunger: 100
   thirst: 100
   health: 100
+  hungerLoss: 20
+  thirstLoss: 20
+  healthLoss: 10
   hungerSlider: {fileID: 1907619541}
   thirstSlider: {fileID: 752111076}
   healthSlider: {fileID: 1400864085}
@@ -2256,6 +2260,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fridgeManager: {fileID: 1191986796}
   doorController: {fileID: 560255173}
+  cameraController: {fileID: 330585548}
   foodCount: 20
   turnDuration: 10
 --- !u!114 &1191986796
@@ -3183,7 +3188,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1743606624
 Transform:
   m_ObjectHideFlags: 0

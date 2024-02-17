@@ -5,6 +5,7 @@ public class TurnManager : MonoBehaviour
 {
     [SerializeField] private FridgeManager fridgeManager;
     [SerializeField] private DoorController doorController;
+    [SerializeField] private CameraController cameraController;
     [SerializeField] private int foodCount;
     [SerializeField] private float turnDuration = 5f;
 
@@ -37,6 +38,7 @@ public class TurnManager : MonoBehaviour
         turnCount += 1;
         turnStarted = true;
         turnTimer = 0f; // Reset the timer when the turn starts
+        cameraController.ZoomLevel(-10f);
     }
 
     private void CloseFridge()
@@ -44,6 +46,7 @@ public class TurnManager : MonoBehaviour
         turnStarted = false;
         turnTimer = 0f; // Reset the timer when the turn ends
         doorController.CloseDoor();
+        cameraController.ZoomLevel(-15f);
         StartCoroutine(DelayPopulateFridge());
     }
 
