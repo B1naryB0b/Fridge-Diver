@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Food : MonoBehaviour
 {
-    [SerializeField] private FoodStats stats;
+    public FoodStats stats;
     
     private Collider objectCollider;
     private Rigidbody objectRigidbody;
